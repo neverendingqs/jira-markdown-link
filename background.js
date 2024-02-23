@@ -1,8 +1,9 @@
 const injectedFunction = () => {
   const formatTitle = (text, url) => {
-    return text
-      .replace(/^\[.+\]/, (match) => `[${match}](${url})`)
-      .replace(' - Jira', '');
+    const title = text.replace(/ \- Jira$/i, '');
+    const [, id, description] = title.match(/^\[(.*?)\]\W(.*)$/) || [];
+
+    return `[${id}: ${description}](${url})`;
   };
 
   const copyTextToClipboard = (text) => {

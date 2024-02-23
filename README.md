@@ -3,7 +3,7 @@ A simple extension to copy a link to the currently open JIRA ticket as formatted
 
 [Available on the Chrome Web Store](https://chrome.google.com/webstore/detail/copy-jira-issue-link-as-m/ddodimdmkjejnaknifbdadmkefibglco)
 
-For example: `[[TEST-3301]](https://mycompany.atlassian.net/browse/TEST-3301) My test ticket`
+For example: `[TEST-3301: My test ticket](https://mycompany.atlassian.net/browse/TEST-3301)`
 
 ## Publishing
 1. `zip jira-markdown-link.zip logo/* background.js manifest.json LICENSE`
