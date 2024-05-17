@@ -3,7 +3,7 @@ const injectedFunction = () => {
     const title = text.replace(/ \- Jira$/i, '');
     const [, id, description] = title.match(/^\[(.*?)\]\W(.*)$/) || [];
 
-    return `[${id}: ${description}](${url})`;
+    return `[${id}](${url}): ${description}`;
   };
 
   const copyTextToClipboard = (text) => {
