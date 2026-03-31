@@ -1,7 +1,11 @@
-const injectedFunction = () => {
-  const formatTitle = (text, url) => {
+const injectedFunction = (format) => {
+  const formatTitle = (text, url, format) => {
     const title = text.replace(/ \- Jira$/i, '');
     const [, id, description] = title.match(/^\[(.*?)\]\W(.*)$/) || [];
+
+    if (format === 'fullLink') {
+      return `[[${id}]: ${description}](${url})`;
+    }
 
     return `[${id}](${url}): ${description}`;
   };
@@ -16,7 +20,7 @@ const injectedFunction = () => {
     document.body.removeChild(copyFrom);
   };
 
-  const formatted = formatTitle(document.title, document.URL);
+  const formatted = formatTitle(document.title, document.URL, format);
 
   if (!navigator.clipboard) {
     copyTextToClipboard(formatted);
@@ -28,8 +32,11 @@ const injectedFunction = () => {
 };
 
 chrome.action.onClicked.addListener((tab) => {
-  chrome.scripting.executeScript({
-    target: { tabId: tab.id },
-    function: injectedFunction
+  chrome.storage.sync.get({ format: 'idLink' }, (options) => {
+    chrome.scripting.executeScript({
+      target: { tabId: tab.id },
+      func: injectedFunction,
+      args: [options.format]
+    });
   });
 });
