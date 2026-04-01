@@ -10,22 +10,18 @@
         "128": "logo/logo-128.png"
     },
     "action": {
-        "default_title": "Copy JIRA Issue Link As Markdown"
+        "default_title": "Copy JIRA Issue Link As Markdown",
+        "default_popup": "popup.html"
     },
     "permissions": [
         "activeTab",
         "clipboardWrite",
-        "scripting",
-        "storage"
+        "scripting"
     ],
     "host_permissions": [
         "*://*.atlassian.net/browse/*"
     ],
     "background": {
         "service_worker": "background.js"
-    },
-    "options_ui": {
-        "page": "options.html",
-        "open_in_tab": false
     }
 }

@@ -5,15 +5,15 @@ A simple extension to copy a link to the currently open JIRA ticket as formatted
 
 For example: `[TEST-3301](https://mycompany.atlassian.net/browse/TEST-3301): My test ticket`
 
-You can choose between two markdown formats via the extension options:
+Click the extension icon to choose a markdown format each time:
 
 | Format | Example |
 |--------|---------|
-| `[Jira ID](link): story` (default) | `[TEST-3301](https://mycompany.atlassian.net/browse/TEST-3301): My test ticket` |
+| `[Jira ID](link): story` | `[TEST-3301](https://mycompany.atlassian.net/browse/TEST-3301): My test ticket` |
 | `[[Jira ID]: story](link)` | `[TEST-3301: My test ticket](https://mycompany.atlassian.net/browse/TEST-3301)` |
 
 ## Publishing
-1. `zip jira-markdown-link.zip logo/* background.js options.html options.js manifest.json LICENSE`
+1. `zip jira-markdown-link.zip logo/* background.js popup.html popup.js manifest.json LICENSE`
 2. Upload at [Developer Dashboard](https://chrome.google.com/webstore/devconsole)
 
 ## Local dev

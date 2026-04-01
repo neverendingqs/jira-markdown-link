@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 8px;
+      margin: 0;
+      min-width: 200px;
+    }
+    button {
+      display: block;
+      width: 100%;
+      padding: 8px;
+      margin: 4px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background: #fff;
+      cursor: pointer;
+      font-size: 13px;
+      text-align: left;
+    }
+    button:hover {
+      background: #f0f0f0;
+    }
+    code {
+      font-size: 12px;
+    }
+    #status {
+      margin-top: 6px;
+      color: green;
+      font-size: 12px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <button id="idLink"><code>[Jira ID](link): story</code></button>
+  <button id="fullLink"><code>[[Jira ID]: story](link)</code></button>
+  <div id="status"></div>
+  <script src="popup.js"></script>
+</body>
+</html>
