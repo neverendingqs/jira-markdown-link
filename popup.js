@@ -10,7 +10,7 @@ const formatTitle = (text, url, format) => {
     return `[[${id}]: ${description}](${url})`;
   }
 
-  return `[${id}](${url}): ${description}`;
+  return `*[${id}](${url}): ${description}*`;
 };
 
 const copyWithFormat = async (format) => {
