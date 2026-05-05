@@ -7,7 +7,7 @@ const formatTitle = (text, url, format) => {
   const [, id, description] = title.match(/^\[(.*?)\]\W(.*)$/) || [];
 
   if (format === 'fullLink') {
-    return `[[${id}]: ${description}](${url})`;
+    return `[${id}: ${description}](${url})`;
   }
 
   return `*[${id}](${url}): ${description}*`;
